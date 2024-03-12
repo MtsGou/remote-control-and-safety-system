@@ -1,0 +1,10 @@
+SEMA_definitions.c:255:6:FIRMWARE_BEGIN	8	static
+SEMA_definitions.c:286:6:MONITORAMENTO	32	static
+SEMA_definitions.c:406:6:SEND_STATUS_TO_CPU	16	static
+SEMA_definitions.c:481:6:MONITORAR_REDE	8	static
+SEMA_definitions.c:512:6:FAIL_ESP	32	static
+SEMA_definitions.c:538:6:FAIL_UPA	32	static
+SEMA_definitions.c:565:6:FAIL_ESP_UPA	32	static
+SEMA_definitions.c:585:6:FAIL_CPU	32	static
+SEMA_definitions.c:608:6:FAIL_GENERAL	32	static
+SEMA_definitions.c:639:6:SYS_OK_RECOVERED	32	static

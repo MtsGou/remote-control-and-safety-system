@@ -1,0 +1,200 @@
+div.firstcontent{
+    background-color:#ffffff;
+    height: 150px;
+    width: 240px;
+    border: 5px solid #000000;
+    float: left; 
+    }
+    
+    div.secondcontent{
+    background-color:#ffffff;
+    height: 700px;
+    width: 340px;
+    border: 5px solid #000000;
+    float: left; 
+    }
+    
+    div.thirdcontent{
+    background-color:#ffffff;
+    height: 400px;
+    width: 380px;
+    border: 5px solid #000000;
+    float: left; 
+    }
+    
+    div.fourthcontent{
+    background-color:#ffffff;
+    height: 860px;
+    width: 740px;
+    border: 5px solid #000000;
+    float: down; 
+    }
+    
+    #dadosmodorm {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    
+    #dadosmodorm td, #dadosmodorm th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadosmodorm tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadosmodorm tr:hover {background-color: #ddd;}
+    
+    #dadosmodorm td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadosmodorm th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    
+    #dadoskeystart {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    
+    #dadoskeystart td, #dadoskeystart th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadoskeystart tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadoskeystart tr:hover {background-color: #ddd;}
+    
+    #dadoskeystart td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadoskeystart th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    #dadosdecelbrake {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 30%;
+    }
+    
+    #dadosdecelbrake td, #dadosdecelbrake th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadosdecelbrake tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadosdecelbrake tr:hover {background-color: #ddd;}
+    
+    #dadosdecelbrake td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadosdecelbrake th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    #dadosripper {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    
+    #dadosripper td, #dadosripper th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadosripper tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadosripper tr:hover {background-color: #ddd;}
+    
+    #dadosripper td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadosripper th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    #dadoslamina {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+    }
+    
+    #dadoslamina td, #dadoslamina th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadoslamina tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadoslamina tr:hover {background-color: #ddd;}
+    
+    #dadoslamina td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadoslamina th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    #dadossensordirecao {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+    }
+    
+    #dadossensordirecao td, #dadossensordirecao th {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+    
+    #dadossensordirecao tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #dadossensordirecao tr:hover {background-color: #ddd;}
+    
+    #dadossensordirecao td{
+    text-align: center;
+    font-weight: bold;
+    } 
+    
+    #dadossensordirecao th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }

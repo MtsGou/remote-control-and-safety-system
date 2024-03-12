@@ -1,0 +1,3 @@
+serial_radio.c:34:6:GerarFrames	8	static
+serial_radio.c:102:6:PreencherBuffer	24	static
+serial_radio.c:167:6:VerificarComando	48	static

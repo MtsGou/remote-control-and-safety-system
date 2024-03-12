@@ -1,0 +1,11 @@
+Menu_SEMA.c:42:6:Handle_user	16	static
+Menu_SEMA.c:185:10:edit_int	64	static
+Menu_SEMA.c:284:7:edit_float	56	static
+Menu_SEMA.c:380:6:edit_string	48	static
+Menu_SEMA.c:437:6:reset_dados	32	static
+Menu_SEMA.c:518:7:eliminar_nao_char	32	static
+Menu_SEMA.c:540:6:apagar_tela	16	static
+Menu_SEMA.c:556:6:usar_valores_padrao	8	static
+Menu_SEMA.c:582:6:Print_Menu	8	static
+Menu_SEMA.c:615:6:gravar_parametros	8	static
+Menu_SEMA.c:654:6:ver_parametros	8	static

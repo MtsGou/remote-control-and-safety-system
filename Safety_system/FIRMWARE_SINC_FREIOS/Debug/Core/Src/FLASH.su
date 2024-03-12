@@ -1,0 +1,8 @@
+FLASH.c:34:6:FLASH_apaga	48	static
+FLASH.c:84:6:FLASH_escreve_16bits	32	static
+FLASH.c:125:6:FLASH_escreve_32bits	32	static
+FLASH.c:167:6:FLASH_escreve_string	40	dynamic
+FLASH.c:203:6:FLASH_le_16bits	16	static
+FLASH.c:221:6:FLASH_le_32bits	16	static
+FLASH.c:237:6:FLASH_le_string_0xFF	24	static
+FLASH.c:264:17:GetPage	24	static

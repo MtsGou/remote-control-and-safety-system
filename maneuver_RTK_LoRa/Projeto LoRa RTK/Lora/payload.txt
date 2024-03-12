@@ -1,0 +1,45 @@
+json payload Emulator TagoIO
+
+63063d73c1455d0018e863da
+63063eab00e430001a05c0a5
+
+TODOS OS DADOS
+  {
+    "topic": "application/1/device/ac1f09fffe067188/rx",
+    "payload": "{\"applicationID\":\"1\",\"applicationName\":\"GPS1\",\"devEUI\":\"ac1f09fffe067188\",\"deviceName\":\"GPS1\",\"timestamp\":1664472504,\"fCnt\":223,\"fPort\":2,\"data\":\"MSwtMjEuODM5MDQzLC00My4zNzY1NTMsOCwxMTQ=\",\"data_encode\":\"base64\",\"adr\":false,\"rxInfo\":[{\"gatewayID\":\"ac1f09fffe06fccf\",\"loRaSNR\":12.8,\"rssi\":-32,\"location\":{\"latitude\":-21.839110,\"longitude\":-43.376530,\"altitude\":784},\"time\":\"2022-09-29T17:28:24.583735Z\"}],\"txInfo\":{\"frequency\":916200000,\"dr\":2}}",
+    "qos": 1,
+    "isHex": false,
+    "bucket": "63063d73c1455d0018e863da",
+    "messageId": 265
+  }
+
+
+PAYLOAD
+  {
+    "applicationID":"1",
+    "applicationName":"GPS1",
+    "devEUI":"ac1f09fffe067188",
+    "deviceName":"GPS1",
+    "timestamp":1664472504,
+    "fCnt":223,
+    "fPort":2,
+    "data":"MSwtMjEuODM5MDQzLC00My4zNzY1NTMsOCwxMTQ=",
+    "data_encode":"base64",
+    "adr":false,
+    "rxInfo":
+    [
+      {"gatewayID":"ac1f09fffe06fccf",
+      "loRaSNR":12.8,
+      "rssi":-32,
+      "location":{
+        "latitude":-21.839110,
+        "longitude":-43.376530,
+        "altitude":784},
+        "time":"2022-09-29T17:28:24.583735Z"
+      }
+    ],
+    "txInfo":{
+      "frequency":916200000,
+      "dr":2
+    }
+  }

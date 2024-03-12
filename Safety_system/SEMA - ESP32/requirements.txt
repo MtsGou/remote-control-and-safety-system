@@ -1,0 +1,9 @@
+AsyncTCP-esphome == 2.1.3
+ESPAsyncWebServer-esphome == 2.1.0
+WebSockets == 2.4.1
+AsyncTCP-esphome == 2.0.0
+ESPAsyncWebServer-esphome == 2.1.0
+
+#platformio versions
+Core == 6.1.11
+Home == 3.4.4

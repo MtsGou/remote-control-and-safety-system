@@ -1,0 +1,164 @@
+
+/*-------CSS--------*/
+
+@font-face {
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    src: url('Overpass-bold.ttf');
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color: white;
+  }
+  
+  
+  h2 { 
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: -2px;
+  color: white;}
+  
+  .content {
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  }
+  
+  p {font-family: 'Overpass'; text-align: center; font-size: 18px;}
+  
+  /*--TOPO--*/
+  .topnav {
+  overflow: hidden;
+  background-color: Green;
+  }
+  
+  /*--RODAPE--*/
+  
+  #container {
+  position:relative;
+  }
+  
+  #body {
+  padding:10px;
+  padding-bottom:60px;   /* Height of the footer */
+  }
+  
+  #footer {
+  overflow: hidden;
+  background: Green;
+  bottom:0;
+  height:60px;   /* Height of the footer */
+  color: white;
+  clear: both;
+  margin-top: -60px;
+  }
+  
+  /*----BOTAO DE ACIONAMENTO----*/
+  
+  .botao_acao {
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  height: 150px;
+  width: 240px;
+  padding: 0 13px;
+  color: #fff;
+  vertical-align: top;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all .3s ease;
+  background: #cc4d29;
+  border-color: #cc4d29;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 16px;
+  font-size: 30px;
+  }
+  
+  .botao_acao:hover {
+  background: #e4461b;
+  border-color: #e4461b;
+  }
+                  
+  /*----WARNING-----*/
+  
+  .warn,
+  .warn::before,
+  .warn::after
+  {
+    position: relative;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .warn {
+    font-size: 100px;
+    color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .warn.warning {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+    top: 0.225em;
+  
+    width: 1.15em;
+    height: 1.15em;
+  
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    border-radius: 0.625em;
+  }
+  
+  .warn.warning::before {
+    content: "";
+    display: block;
+    top: -0.08em;
+    left: 0.0em;
+    position: absolute;
+    border: transparent 0.6em solid;
+    border-bottom-color: #fd3;
+    border-bottom-width: 1em;
+    border-top-width: 0;
+    box-shadow: #999 0 1px 1px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .warn.warning::after {
+    display: block;
+    position: absolute;
+    top: 0.3em;
+    left: 0;
+    width: 115px;
+    padding: 0 1px;
+    text-align: center;
+    font-family: "Garamond";
+    content: "!";
+    font-size: 0.70em;
+    font-weight: bold;
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

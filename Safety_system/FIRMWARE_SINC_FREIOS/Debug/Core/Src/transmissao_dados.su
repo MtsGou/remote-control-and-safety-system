@@ -1,0 +1,7 @@
+transmissao_dados.c:33:6:COMUNICACAO_SERIAL_DEBUG	8	static
+transmissao_dados.c:55:7:IntParaString	40	static
+transmissao_dados.c:92:6:MILLIS_INFORMAR_HORARIO	64	static
+transmissao_dados.c:178:6:escreve_USB	16	static
+transmissao_dados.c:188:6:reverse	32	static
+transmissao_dados.c:204:5:intToStr	32	static
+transmissao_dados.c:223:6:ftoa	48	static
