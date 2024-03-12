@@ -94,3 +94,5 @@ bool CPU_BREAK_ACT = 0;
 bool STM_FEEDBACK = 0;
 
 String Buffer_report = "REPORT DATA: <br><br>";
+
+char empty[EEPROM_SIZE];
