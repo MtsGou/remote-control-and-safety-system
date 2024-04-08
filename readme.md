@@ -18,158 +18,158 @@ drive-by-wire function. SEMA signals are responsible for acting only in emergenc
     PINOUT:
 
     (#) CPU communication PINS:
-      (*) IN_EXTRA_CPU: Recebimento de comandos do CPU para frear ou desativar freio.
-                          1 -> Freio atuado. 0-> Freio nao atuado.
-      (*) OUT_EXTRA_CPU: Envio de feedbacks para CPU apos atuacao.
-                          1 -> Freio atuado. 0-> Freio nao atuado.
-      (*) IN_PWM_CPU: Recebe o PWM indicativo do estado de funcionamento do CPU.
+      (*) IN_EXTRA_CPU: Receive commands from the CPU to brake or disable brake.
+                          1 -> Brake actuated. 0-> Brake not actuated.
+      (*) OUT_EXTRA_CPU: Send feedback to the CPU after action.
+                          1 -> Brake actuated. 0-> Brake not actuated.
+      (*) IN_PWM_CPU: Receives the PWM indicating the operating status of the CPU.
 
     (#) UPA communication PINS:
-      (*) IN_PWM_UPA: Recebe o PWM indicativo do estado de funcionamento da UPA.
+      (*) IN_PWM_UPA: Receives the PWM indicating the UPA's operating status.
 
     (#) STM communication PINS:
-      (*) IO_OUT_ESP_1: Recebimento de feedbacks do STM apos atuacao deste.
-                          1 -> Freio atuado. 0-> Freio nao atuado.
-      (*) IO_OUT_ESP_2: Envio de feedbacks para STM apos atuacao.
-                          1 -> Freio atuado. 0-> Freio nao atuado.
-      (*) OUT_PWM_ESP: Recebe o PWM indicativo do estado de funcionamento do STM.
-      (*) IN_PWM_ESP: Envia um PWM indicativo do estado de funcionamento do ESP.
-      (*) CONNECT_ESP_IN: Envia um sinal digital para informar a conexao do ESP.
-                          1 -> conectado. 0-> nao conectado.
-      (*) ESP_IN_CLIENTE: Envia um sinal digital indicando conexao dos clientes.
-                        1 -> ao menos 1 cliente conectado. 0-> nao conectado.
+      (*) IO_OUT_ESP_1: Receiving feedback from the STM after its action.
+                          1 -> Brake actuated. 0-> Brake not actuated.
+      (*) IO_OUT_ESP_2: Sending feedback to STM after action.
+                          1 -> Brake actuated. 0-> Brake not actuated.
+      (*) OUT_PWM_ESP: Receives the PWM indicating the operating status of the STM.
+      (*) IN_PWM_ESP: Sends a PWM indicating the operating status of the ESP.
+      (*) CONNECT_ESP_IN: Sends a digital signal to inform the ESP connection.
+                          1 -> connected. 0-> not connected.
+      (*) ESP_IN_CLIENTE: Sends a digital signal indicating customer connection.
+                        1 -> at least 1 client connected. 0-> not connected.
 
-    (#) Actuation pins:
-      (*) RELE_FREIO_ESP: Saida digital responsavel por atuar o rele de freio.
-      (*) FE_ESP: Geracao do PWM do freio de emergencia para a ECM do caminhao.
-      (*) AC_ESP: Geracao do PWM do acelerador para a ECM do caminhao.
+    (#) Action pins:
+      (*) RELE_FREIO_ESP: Digital output responsible for actuating the brake relay.
+      (*) FE_ESP: Generation of the emergency brake PWM for the truck's ECM.
+      (*) AC_ESP: Generation of the PWM from the accelerator to the truck's ECM.
 
-    (#) RESUMO:
-        (+) Em condicoes normais, o rele nao esta atuado.
-        (+) Recebimento de PWM indicativo de estado de funcionamento:
-          - Feito por meio de pinos de interrupcao externa.
-          - A interrupcao zera contadores.
-          - Se os contadores ultrapassarem um limite,
-            e entendido como falha.
-        (+) Condicoes de atuacao:
-          - Com falha do STM, ou
-          - Com ordem direta do operador (cliente), ou
-          - Com ordem direta do CPU, ou
-          - Pelo despacho, ao receber comando em protocolo TCP
-        (+) Na atuacao, o rele atua e envia para ECM os PWM gerados.
-        (+) Um menu de configuracao pode ser acessado 
-            na inicializacao (apenas).
-          - Os parametros configurados podem ser salvos na flash.
-          - Os parametros configurados podem ser apagados da flash.
-          - A flash e manipulada com uso da biblioteca EEPROM.
-        (+) Eventualidades sao informadas a todo momento por UART,
-            contendo timestamp.
-        (+) Conexao:
-          - Tenta conectar a um AP WiFi na rede salva.
-          - Deve estar na mesma rede do despacho.
-          - O sistema funciona mesmo sem rede, porem, sem os
-            recursos de freio remoto e monitoramento remoto.
-          - Este software oferece dois servidores.
-          - Servidor 1: porta 80. Comunica via socket com front-end.
-          - Servidor 2: porta 8080. Comunica com despacho via TCP.
-  */
+    (#) SUMMARY:
+        (+) Under normal conditions, the relay is not activated.
+        (+) PWM reception indicating operating status:
+          - Made using external interrupt pins.
+          - The interruption resets counters.
+          - If the counters exceed a limit,
+            and understood as failure.
+        (+) Operating conditions:
+          - With STM failure, or
+          - With direct order from the operator (customer), or
+          - With direct order from the CPU, or
+          - By dispatch, upon receiving command in TCP protocol
+        (+) During actuation, the relay actuates and sends the generated PWM to the ECM.
+        (+) A configuration menu can be accessed
+            at startup (only).
+          - The configured parameters can be saved in the flash.
+          - The configured parameters can be erased from the flash.
+          - Flash is manipulated using the EEPROM library.
+        (+) Events are informed at all times via UART,
+            containing timestamp.
+        (+) Connection:
+          - Attempts to connect to a WiFi AP on the saved network.
+          - Must be on the same network as the dispatch.
+          - The system works even without a network, however, without
+            remote braking and remote monitoring capabilities.
+          - This software offers two servers.
+          - Server 1: port 80. Communicates via socket with front-end.
+          - Server 2: port 8080. Communicates with dispatch via TCP.
+
 
 ## STM32 MCU
 
 
 [..]
-  *
-  *  PINOUT:
-  *
-  *  (#) CPU communication PINS:
-  *    (*) IN_CPU_6: Recebimento de comandos do CPU para frear ou desativar freio.
-  *                        1 -> Freio atuado. 0-> Freio nao atuado.
-  *    (*) FEEDBACK_CPU: Envio de feedbacks para CPU apos atuacao.
-  *                        1 -> Freio atuado. 0-> Freio nao atuado.
-  *    (*) IN_PWM_CPU: Recebe o PWM indicativo do estado de funcionamento do CPU.
-  *    (*) PWM_OUT_CPU: Envia o PWM indicativo do estado de funcionamento do STM32.
-  *    (*) GATE_FR: Habilita o ajuste do freio de retardo pelo CPU.
-  *    (*) FR_BIT_1: Bit 1 do ajuste do freio de retardo pelo CPU.
-  *    (*) FR_BIT_2: Bit 2 "									"
-  *    (*) FR_BIT_3: Bit 3 "									"
-  *    (*) FR_BIT_4: Bit 4 "									"
-  *    (*) CPU_OUT_A: Primeiro pino para informar status do sistema para CPU.
-  *    (*) CPU_OUT_B: Segundo pino "									"
-  *    (*) CPU_OUT_C: Terceiro pino "									"
-  *
-  *
-  *  (#) UPA communication PINS:
-  *    (*) IN_PWM_UPA: Recebe o PWM indicativo do estado de funcionamento da UPA.
-  *    (*) PWM_OUT_UPA: Envia o PWM indicativo do estado de funcionamento do STM32.
-  *
-  *  (#) ESP communication PINS:
-  *    (*) IO_OUT_ESP_2: Recebimento de feedbacks do ESP apos atuacao deste.
-  *                        1 -> Freio atuado. 0-> Freio nao atuado.
-  *    (*) IO_OUT_ESP_1: Envio de feedbacks para ESP apos atuacao.
-  *                        1 -> Freio atuado. 0-> Freio nao atuado.
-  *    (*) OUT_PWM_ESP: Envia um PWM indicativo do estado de funcionamento do STM32.
-  *    (*) IN_PWM_ESP: Recebe o PWM indicativo do estado de funcionamento do ESP.
-  *    (*) CONNECT_ESP_IN: Recebe um sinal digital para informar a conexao do ESP.
-  *                        1 -> conectado. 0-> nao conectado.
-  *    (*) ESP_IN_CLIENTE: Recebe sinal digital do ESP indicando conexao dos clientes.
-  *                      1 -> ao menos 1 cliente conectado. 0-> nao conectado.
-  *
-  *  (#) Actuation pins:
-  *    (*) RELE_FREIO_STM: Saida digital responsavel por atuar o rele de freio.
-  *    (*) FE_STM: Geracao do PWM do freio de emergencia para a ECM do caminhao.
-  *    (*) AC_STM: Geracao do PWM do acelerador para a ECM do caminhao.
-  *    (*) FR_STM: Geracao do PWM do freio de retardo para a ECM do caminhao.
-  *    (*) ON_OFF_SWITCH: Pino para ligar o MUX
-  *    (*) A_SWITCH: Pino A para trocar posicao do MUX.
-  *    (*) B_SWITCH: Pino B "						   "
-  *
-  *  (#) Indication pins:
-  *    (*) LED_GREEN: Led para indicar recebimento RX do radio (UART 3)
-  *    (*) LED_RED: Led para indicar envio TX para radio (UART 3)
-  *    (*) CHECK_FONTE: Indica o estado da bateria do caminhao.
-  *    					1 -> Bateria OK. 0-> Falha na alimentacao.
-  *
-  *  (#) RESUMO:
-  *      (+) Em condicoes normais, os reles nao estao atuados.
-  *      (+) Posicao do MUX padrao: sinais da UPA.
-  *      (+) Recebimento de PWM indicativo de estado de funcionamento:
-  *        - Feito por meio de pinos de interrupcao externa.
-  *        - A interrupcao zera contadores.
-  *        - Se os contadores ultrapassarem um limite (timeout),
-  *          e entendido como falha.
-  *        - Uma callback ocorre a cada overflow do timer 16 (1 ms).
-  *        - Nessa callback, e feito o monitoramento e a
-  *          identificacao de falhas.
-  *        - Falha ESP: +1, Falha UPA: +2, Falha CPU: +5.
-  *          Ex.: Falha de numero 7 = Falha UPA e CPU (5 + 2)
-  *
-  *      (+) Condicoes de atuacao:
-  *        - Falha da UPA
-  *        - Falha do CPU
-  *        - Falha de ambos
-  *        - Ordem direta do controlador (botao de emergencia)
-  *        - Com ordem direta do CPU
-  *      (+) Na atuacao, o rele atua e envia para ECM os PWM gerados,
-  *      	 em conjunto com a troca da posicao do MUX (STM).
-  *      (+) Um menu de configuracao pode ser acessado.
-  *        - Os parametros configurados podem ser salvos na flash.
-  *        - Os parametros configurados podem ser apagados da flash.
-  *      (+) Eventualidades sao informadas a qualquer momento por UART4,
-  *          contendo timestamp (tempo apos inicio do funcionamento).
-  *      (+) Conexao:
-  *        - Recebe PING do transmissor na torre de controle.
-  *        - Responde PONG ao transmissor.
-  *        - Se parar de receber PING, indica perda de conexao do STM.
-  *      (+) A placa possui sistema preventivo de queda de energia.
-  *        - Se o sistema perder a alimentacao que vem da bateria
-  *      	 do caminhao, uma bateria reserva em paralelo, protegida
-  *      	 por um diodo, passa a alimentar o sistema, para mante-lo
-  *      	 em devido funcionamento.
-  *        - Se perder a alimentacao do caminhao, uma mensagem sera
-  *        	 enviada remotamente ao controlador na torre de controle.
-  *        - Com falha dos demais componentes do autonomo (UPA e CPU)
-  *          o STM32 ira frear de imediato.
-  *
+
+  PINOUT:
+
+  (#) CPU communication PINS:
+    (*) IN_CPU_6: Receive commands from the CPU to brake or disable brake.
+                        1 -> Brake actuated. 0-> Brake not actuated.
+    (*) FEEDBACK_CPU: Sending feedback to the CPU after action.
+                        1 -> Brake actuated. 0-> Brake not actuated.
+    (*) IN_PWM_CPU: Receives the PWM indicating the operating status of the CPU.
+    (*) PWM_OUT_CPU: Sends the PWM indicating the operating status of the STM32.
+    (*) GATE_FR: Enables delay brake adjustment by the CPU.
+    (*) FR_BIT_1: Bit 1 of the delay brake adjustment by the CPU.
+    (*) FR_BIT_2: Bit 2 " "
+    (*) FR_BIT_3: Bit 3 " "
+    (*) FR_BIT_4: Bit 4 " "
+    (*) CPU_OUT_A: First pin to report system status to CPU.
+    (*) CPU_OUT_B: Second pin " "
+    (*) CPU_OUT_C: Third pin " "
+
+
+  (#) UPA communication PINS:
+    (*) IN_PWM_UPA: Receives the PWM indicating the UPA's operating status.
+    (*) PWM_OUT_UPA: Sends the PWM indicating the operating status of the STM32.
+
+  (#) ESP communication PINS:
+    (*) IO_OUT_ESP_2: Receiving feedback from the ESP after its action.
+                        1 -> Brake actuated. 0-> Brake not actuated.
+    (*) IO_OUT_ESP_1: Send feedback to ESP after action.
+                        1 -> Brake actuated. 0-> Brake not actuated.
+    (*) OUT_PWM_ESP: Sends a PWM indicating the operating status of the STM32.
+    (*) IN_PWM_ESP: Receives the PWM indicating the operating status of the ESP.
+    (*) CONNECT_ESP_IN: Receives a digital signal to inform the ESP connection.
+                        1 -> connected. 0-> not connected.
+    (*) ESP_IN_CLIENTE: Receives digital signal from ESP indicating customer connection.
+                      1 -> at least 1 client connected. 0-> not connected.
+
+  (#) Action pins:
+    (*) RELE_FREIO_STM: Digital output responsible for actuating the brake relay.
+    (*) FE_STM: Generation of the emergency brake PWM for the truck's ECM.
+    (*) AC_STM: Generation of the PWM from the accelerator to the truck's ECM.
+    (*) FR_STM: Generation of the delay brake PWM for the truck's ECM.
+    (*) ON_OFF_SWITCH: Pin to turn on the MUX
+    (*) A_SWITCH: Pin A to change the MUX position.
+    (*) B_SWITCH: Pin B " "
+
+  (#) Indication pins:
+    (*) LED_GREEN: Led to indicate RX reception from the radio (UART 3)
+    (*) LED_RED: Led to indicate sending TX to radio (UART 3)
+    (*) CHECK_SOURCE: Indicates the status of the truck’s battery.
+    1 -> Battery OK. 0-> Power failure.
+
+  (#) SUMMARY:
+      (+) Under normal conditions, the relays are not activated.
+      (+) Default MUX position: UPA signals.
+      (+) PWM reception indicating operating status:
+        - Made using external interrupt pins.
+        - The interruption resets counters.
+        - If the counters exceed a limit (timeout),
+          and understood as failure.
+        - A callback occurs every timer 16 overflow (1 ms).
+        - In this callback, monitoring and
+          fault identification.
+        - ESP Failure: +1, UPA Failure: +2, CPU Failure: +5.
+          Ex.: Failure number 7 = UPA and CPU failure (5 + 2)
+
+      (+) Operating conditions:
+        - UPA failure
+        - CPU failure
+        - Failure of both
+        - Direct order from the controller (emergency button)
+        - With direct order from the CPU
+      (+) When actuating, the relay actuates and sends the generated PWM to the ECM,
+      in conjunction with changing the position of the MUX (STM).
+      (+) A configuration menu can be accessed.
+        - The configured parameters can be saved in the flash.
+        - The configured parameters can be erased from the flash.
+      (+) Events are reported at any time via UART4,
+          containing timestamp (time after start of operation).
+      (+) Connection:
+        - Receives PING from the transmitter in the control tower.
+        - Responds PONG to the transmitter.
+        - If you stop receiving PING, it indicates loss of STM connection.
+      (+) The board has a power outage prevention system.
+        - If the system loses power from the battery
+      of the truck, a backup battery in parallel, protected
+      by a diode, starts to power the system, to keep it
+      in proper functioning.
+        - If the truck's power is lost, a message will be
+        sent remotely to the controller in the control tower.
+        - Failure of other autonomous components (UPA and CPU)
+          the STM32 will brake immediately.
+
 
 Codes were written in the C and C++ languages, according to the
 ANSI C/C++ (American National Standards Institute) standard. Additionally, the page
